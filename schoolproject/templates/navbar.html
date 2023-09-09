@@ -1,0 +1,53 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         <li class="nav-item">
+          <a class="nav-link" href="#" style="color:blue;font-size:20px;"><b>SCHOOL STORE</b></a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/" style="color:blue;font-size:15px;"><b>Home</b></a>
+
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color:Black;font-size:15px;">Hi {{user.username}}</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="logout" style="color:blue;font-size:15px;">Logout</a>
+        </li>
+        {% else %}
+         <li class="nav-item">
+          <a class="nav-link" href="login" style="color:blue;font-size:15px;"><b>Login</b></a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="register" style="color:blue;font-size:15px;"><b>Register</b></a>
+          </li>
+        {% endif %}
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:blue;font-size:15px;">
+            <b>Department</b>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Computer_science">Computer Science</a></li>
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Electronics">Electronics</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Commerce">Commerce</a></li>
+              <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Humanities">Humanities</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Mathematics">Mathematics</a></li>
+
+          </ul>
+          </li>
+      </ul>
+      </div>
+    </div>
+</nav>
